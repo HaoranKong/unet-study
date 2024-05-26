@@ -54,7 +54,7 @@ def make_layers(cfg, batch_norm=False, in_channels = 3):
             if batch_norm:
                 layers += [conv2d, nn.BatchNorm2d(v), nn.ReLU(inplace=True)]
             else:
-                layers += [conv2d, nn.ReLU(inplace=True)]
+                layers += [conv2d, nn.ReLU(inplace=True)]   
             in_channels = v
     return nn.Sequential(*layers)
 # 512,512,3 -> 512,512,64 -> 256,256,64 -> 256,256,128 -> 128,128,128 -> 128,128,256 -> 64,64,256
